@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: LuaBot
+    env: docker
+    plan: free
+    build:
+      dockerfilePath: Dockerfile
+    runtime:
+      startCommand: ./start
