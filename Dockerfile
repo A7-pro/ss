@@ -12,11 +12,12 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     liblua5.3-dev \
     lua-socket \
-    lua-sec
+    libssl-dev \
+    openssl
 
 # تثبيت مكتبات Lua الضرورية عبر Luarocks
 RUN luarocks install luasocket
-RUN luarocks install luasec
+RUN luarocks install luasec OPENSSL_DIR=/usr
 
 # إعداد مجلد العمل
 WORKDIR /app
